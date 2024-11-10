@@ -1,0 +1,23 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="Shopping Assistant" />
+    
+    <StackLayout class="p-4">
+        <Label text="Welcome to Shopping Assistant" class="text-2xl font-bold mb-4 text-center" />
+        
+        <Button text="Set Dietary Goals" tap="{{ onSetGoals }}" class="btn mb-4" />
+        <Button text="Scan Store QR Code" tap="{{ onScanQR }}" class="btn mb-4" />
+        
+        <Label text="{{ statusMessage }}" class="text-lg text-center text-gray-600" textWrap="true" />
+        
+        <ListView items="{{ categories }}" visibility="{{ showCategories ? 'visible' : 'collapsed' }}" class="mt-4">
+            <ListView.itemTemplate>
+                <GridLayout rows="auto" columns="*,*" class="p-2">
+                    <Label text="{{ name }}" col="0" />
+                    <Slider value="{{ percentage }}" col="1" minValue="0" maxValue="100" />
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+        
+        <Button text="Generate Shopping List" tap="{{ onGenerateList }}" class="btn mt-4" visibility="{{ showCategories ? 'visible' : 'collapsed' }}" />
+    </StackLayout>
+</Page>

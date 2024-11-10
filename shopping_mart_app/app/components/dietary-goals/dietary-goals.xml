@@ -1,0 +1,23 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Set Dietary Goals" />
+    
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="Daily Nutritional Goals" class="text-xl font-bold mb-4" />
+            
+            <Label text="Maximum Calories" class="mb-2" />
+            <TextField text="{{ maxCalories }}" keyboardType="number" class="mb-4 p-2 border rounded" />
+            
+            <Label text="Minimum Protein (g)" class="mb-2" />
+            <TextField text="{{ minProtein }}" keyboardType="number" class="mb-4 p-2 border rounded" />
+            
+            <Label text="Maximum Carbs (g)" class="mb-2" />
+            <TextField text="{{ maxCarbs }}" keyboardType="number" class="mb-4 p-2 border rounded" />
+            
+            <Label text="Maximum Fat (g)" class="mb-2" />
+            <TextField text="{{ maxFat }}" keyboardType="number" class="mb-4 p-2 border rounded" />
+            
+            <Button text="Save Goals" tap="{{ onSaveGoals }}" class="btn btn-primary" />
+        </StackLayout>
+    </ScrollView>
+</Page>
